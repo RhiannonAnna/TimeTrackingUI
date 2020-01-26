@@ -1,1 +1,55 @@
-<p>time-tracking-group-logs works!</p>
+<table mat-table [dataSource]="groupLogsToDisplay" class="mat-elevation-z8">
+
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef> ID </th>
+    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="guid">
+    <th mat-header-cell *matHeaderCellDef> GUID </th>
+    <td mat-cell *matCellDef="let element"> {{element.guid}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="description">
+    <th mat-header-cell *matHeaderCellDef> DESCRIPTION </th>
+    <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="startTime">
+    <th mat-header-cell *matHeaderCellDef> START TIME </th>
+    <td mat-cell *matCellDef="let element"> {{element.startTime  | date:'medium' }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="startMethodTime">
+    <th mat-header-cell *matHeaderCellDef> START METHOD TIME </th>
+    <td mat-cell *matCellDef="let element"> {{element.startMethodTime  | date:'medium' }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="endTime">
+    <th mat-header-cell *matHeaderCellDef> END TIME </th>
+    <td mat-cell *matCellDef="let element"> {{element.endTime  | date:'medium' }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="totalTime">
+    <th mat-header-cell *matHeaderCellDef> TOTAL TIME </th>
+    <td mat-cell *matCellDef="let element"> {{element.totalTime}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="methodTime">
+    <th mat-header-cell *matHeaderCellDef> METHOD TIME </th>
+    <td mat-cell *matCellDef="let element"> {{element.methodTime}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="job">
+    <th mat-header-cell *matHeaderCellDef> JOB </th>
+    <td mat-cell *matCellDef="let element"> {{element.job}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="jobTypeId">
+    <th mat-header-cell *matHeaderCellDef> JOB TYPE ID </th>
+    <td mat-cell *matCellDef="let element"> {{element.jobTypeId}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
