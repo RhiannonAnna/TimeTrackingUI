@@ -1,8 +1,9 @@
-<mat-form-field>
+<mat-card class="filters-center">
+<mat-form-field class="filters-spacing">
   <input matInput [(ngModel)]="guidToBeSearch" placeholder="Enter name">
 </mat-form-field>
 
-<mat-form-field>
+<mat-form-field class="filters-spacing">
   <mat-label>Select an option</mat-label>
   <mat-select [(value)]="selectedItemId">
     <mat-option *ngFor="let item of allJobTypes" [value]="item.id">
@@ -11,11 +12,13 @@
   </mat-select>
 </mat-form-field>
 
-<mat-form-field>
+<mat-form-field class="filters-spacing">
   <input matInput [(ngModel)]="jobToBeSearch" placeholder="Enter job">
 </mat-form-field>
 
-<button mat-raised-button color="primary" (click)='filterListTimeTracking()'>SEARCH</button>
+<button mat-raised-button class="filters-spacing button-orange" (click)='filterListTimeTracking()'>SEARCH</button>
+
+</mat-card>
 
 <table mat-table [dataSource]="groupsToDisplay" class="mat-elevation-z8">
 
