@@ -1,3 +1,19 @@
 table {
     width: 100%;
+    margin: auto;
+    max-width: 1300px;
+  }
+  .filters-center {
+    margin: auto;
+    max-width: 1000px;
+    margin-bottom: 5%;
+    margin-top: 2%;
+  }
+  .filters-spacing {
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+  .button-orange {
+    background-color: #D04A02;
+    color: white;
   }
